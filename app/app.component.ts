@@ -13,7 +13,7 @@ import { HeroDetailComponent } from './hero-detail.component';
     template: `  
 <h1>{{title}}</h1>
 	<a [routerLink]="['Dashboard']">Dashboard</a>
-	<a [routerLink]="['Heroes']">Heroes</a>
+	<a [routerLink]="['Heroes']">Integrations</a>
 	 <router-outlet></router-outlet>
 	`,
 	providers: [ROUTER_PROVIDERS, HeroService],
@@ -40,6 +40,6 @@ directives: [ROUTER_DIRECTIVES]
 
  
  export class AppComponent{
-  title = 'Tour of Heroes';
+  title = 'Integrations';
   }
   

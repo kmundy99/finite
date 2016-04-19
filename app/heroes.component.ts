@@ -29,7 +29,7 @@ directives: [HeroDetailComponent]
   }
   
   
-  public onSelect(hero) {
+  onSelect(hero: Hero) {
   this.selectedHero = hero;
   } 
 }
