@@ -3,5 +3,8 @@
 	<h2>{{hero.name}} details!</h2>
 	<div><label>id:</label>{{hero.id}}</div>
 	<div><label>Integration Name: </label><input [(ngModel)]="hero.name" placeholder="name"/> </div>
+	<div><label>Step Id: </label><input [(ngModel)]="steps.id" placeholder="id"/> </div>
+	<div><label>Step Name: </label><input [(ngModel)]="steps.name" placeholder="name"/> </div>
+	<div><label>Step Type: </label><input [(ngModel)]="steps.type" placeholder="type"/> </div>
 	<button (click)=goBack()>Back</button>
 	</div>

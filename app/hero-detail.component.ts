@@ -1,5 +1,5 @@
 import {Component, Input, OnInit} from 'angular2/core';
-import {Hero} from './hero';
+import {Hero, IntegrationSteps} from './hero';
 import {RouteParams} from 'angular2/router';
 import { HeroService } from './hero.service';
 
@@ -18,6 +18,7 @@ export class HeroDetailComponent implements OnInit{
   ngOnInit() {
   let id = +this._routeParams.get('id');
   this._heroService.getHero(id).then(hero => this.hero = hero);
+  this._heroService.getSteps(id).then(steps => this.steps = steps);
   }
   
   goBack() {

@@ -1,9 +1,8 @@
-import {Component} from 'angular2/core';
-import {Hero} from './hero';
+import {Component, OnInit} from 'angular2/core';
+import {Hero, IntegrationSteps} from './hero';
 import {HeroDetailComponent} from './hero-detail.component';
 import {HeroService} from './hero.service';
-import {OnInit} from 'angular2/core';
-
+import { Router } from 'angular2/router';
 
 @Component({
     selector: 'my-heroes',
@@ -17,7 +16,8 @@ directives: [HeroDetailComponent]
   heroes: Hero[];
   selectedHero: Hero;
   
-  constructor(private _heroService: HeroService) { }
+  constructor(private _heroService: HeroService, 
+			private _router: Router) { }
 
   ngOnInit() {
     this.getHeroes();
@@ -32,6 +32,12 @@ directives: [HeroDetailComponent]
   onSelect(hero: Hero) {
   this.selectedHero = hero;
   } 
+  
+  gotoDetail(){ 
+  let link = ['HeroDetail', {id: this.selectedHero.id}];
+  this._router.navigate(link);
+  }
+
 }
 
 
