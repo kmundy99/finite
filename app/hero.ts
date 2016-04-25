@@ -1,21 +1,12 @@
 export class Hero {
   id: number;
-  name: string;
-  IntegrationSteps: IntegrationSteps
+  name: string
 }	
 
 export class IntegrationSteps {
   id: number;
   StepNumber: number;
-  Type: string;
-  Input: [Field];
-  Condition: [Condition];
-  RestApi: RestApi;
-  Excel: Excel;
-  Regex: Regex;
-  Lookup: Lookup;
-  LimitTo: number;
-  Output: [Field];
+  Type: string
 }	
 
 export class RestApi {

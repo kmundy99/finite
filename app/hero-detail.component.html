@@ -1,10 +1,21 @@
-
+{{diagnostic}}
 	<div *ngIf="hero">
 	<h2>{{hero.name}} details!</h2>
 	<div><label>id:</label>{{hero.id}}</div>
 	<div><label>Integration Name: </label><input [(ngModel)]="hero.name" placeholder="name"/> </div>
-	<div><label>Step Id: </label><input [(ngModel)]="steps.id" placeholder="id"/> </div>
-	<div><label>Step Name: </label><input [(ngModel)]="steps.name" placeholder="name"/> </div>
-	<div><label>Step Type: </label><input [(ngModel)]="steps.type" placeholder="type"/> </div>
+
+	<button (click)=moreDetails()> More Details</button>
 	<button (click)=goBack()>Back</button>
+	<div class="container">
+	<div *ngIf="showDetails==1">
+	<form (ngSubmit)="onSubmit()" #stepForm="ngForm">
+		<div><label>Step Id: </label ><input type="text" required [(ngModel)]="steps.id" ngControl="id" #id="ngForm" placeholder="id" /> </div>
+		        <div [hidden]="id.valid || id.pristine" class="alert alert-danger">Id is required</div>
+		<div><label>Step Number: </label><input type="text" required [(ngModel)]="steps.StepNumber" ngControl="stepNumber" #stepNumber="ngForm" placeholder="stepNumber" /> </div>
+				<div [hidden]="stepNumber.valid||stepNumber.pristine" class="alert alert-danger">Step Number is required</div>
+				<div><label>Step Type: </label><select type="text"  [(ngModel)]="steps.Type"><option *ngFor="#type of stepType">{{type}} </option> </select> </div>
+		<button type="Submit">Submit</button>
+	</form>	
+	</div> 
+	</div>
 	</div>

@@ -1,0 +1,19 @@
+/**
+  "Input": [Field];
+  "Condition": [Condition];
+  "RestApi": RestApi;
+  "Excel": Excel;
+  "Regex": Regex;
+  "Lookup": Lookup;
+  "LimitTo": number;
+  "Output": [Field];
+}	, **/
+
+  Input: [Field];
+  Condition: [Condition];
+  RestApi: RestApi;
+  Excel: Excel;
+  Regex: Regex;
+  Lookup: Lookup;
+  LimitTo: number;
+  Output: [Field];
